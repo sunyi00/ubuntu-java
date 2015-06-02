@@ -15,5 +15,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
 RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
 
-RUN add-apt-repository -y ppa:webupd8team/java && apt-get install -y oracle-java7-installer \
+RUN add-apt-repository -y ppa:webupd8team/java && apt-get update && apt-get install -y oracle-java7-installer \
     && rm -rf /var/lib/apt/lists/*
